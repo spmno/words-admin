@@ -1,19 +1,25 @@
 use axum::{
-    routing::{get, post},
+    Json, Router,
     http::StatusCode,
-    Json,
-    Router
+    routing::{get, post},
 };
+
+use crate::word::Word;
+use crate::word_parser::WordParser;
 
 #[tokio::main]
 async fn main() {
     tracing_subscriber::fmt::init();
-    let app = Router::new()
-        .route("/", get(root));
+    let app = Router::new().route("/", get(root));
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
     axum::serve(listener, app).await.unwrap();
 }
 
 async fn root() -> &'static str {
     "hello"
+}
+
+async fn get_words_from_book(book_name: &str) -> Json<Vec<Word>> {
+    let word_parser = WordParser::new();
+    Json(word_parser.parse(book_name).unwrap())
 }
