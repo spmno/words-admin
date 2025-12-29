@@ -1,0 +1,4 @@
+curl -X POST \
+  http://127.0.0.1:3000/api/words \
+  -H "Content-Type: application/json" \
+  -d '{"semester": "Grade_3_First_Semester", "unit": "Unit_1"}'

@@ -1,0 +1,17 @@
+2025-12-29T17:15:46.197232435+08:00  INFO main ThreadId(01) words_admin::logging: 📝 日志系统初始化完成
+2025-12-29T17:15:46.197261631+08:00  INFO main ThreadId(01) words_admin::logging: 📁 日志文件目录: logs
+2025-12-29T17:15:46.197271447+08:00  INFO main ThreadId(01) words_admin::logging: 📊 日志级别: INFO
+2025-12-29T17:15:46.197873008+08:00  INFO sqlx-sqlite-worker-0 ThreadId(22) sqlx::query: summary="PRAGMA foreign_keys = ON; …" db.statement="\n\nPRAGMA foreign_keys = ON; \n" rows_affected=0 rows_returned=0 elapsed=34.749µs elapsed_secs=3.4749e-5
+2025-12-29T17:15:46.198092584+08:00  INFO sqlx-sqlite-worker-0 ThreadId(22) sqlx::query: summary="SELECT sqlite_version()" db.statement="" rows_affected=0 rows_returned=1 elapsed=53.969µs elapsed_secs=5.3969e-5
+2025-12-29T17:16:21.130353531+08:00  INFO main ThreadId(01) words_admin::logging: 📝 日志系统初始化完成
+2025-12-29T17:16:21.130381284+08:00  INFO main ThreadId(01) words_admin::logging: 📁 日志文件目录: logs
+2025-12-29T17:16:21.130392460+08:00  INFO main ThreadId(01) words_admin::logging: 📊 日志级别: INFO
+2025-12-29T17:16:21.131003710+08:00  INFO sqlx-sqlite-worker-0 ThreadId(22) sqlx::query: summary="PRAGMA foreign_keys = ON; …" db.statement="\n\nPRAGMA foreign_keys = ON; \n" rows_affected=0 rows_returned=0 elapsed=34.902µs elapsed_secs=3.4902e-5
+2025-12-29T17:16:21.131156472+08:00  INFO sqlx-sqlite-worker-0 ThreadId(22) sqlx::query: summary="SELECT sqlite_version()" db.statement="" rows_affected=0 rows_returned=1 elapsed=38.898µs elapsed_secs=3.8898e-5
+2025-12-29T17:16:31.732725108+08:00  INFO main ThreadId(01) words_admin::logging: 📝 日志系统初始化完成
+2025-12-29T17:16:31.732751369+08:00  INFO main ThreadId(01) words_admin::logging: 📁 日志文件目录: logs
+2025-12-29T17:16:31.732761272+08:00  INFO main ThreadId(01) words_admin::logging: 📊 日志级别: INFO
+2025-12-29T17:16:31.733355550+08:00  INFO sqlx-sqlite-worker-0 ThreadId(22) sqlx::query: summary="PRAGMA foreign_keys = ON; …" db.statement="\n\nPRAGMA foreign_keys = ON; \n" rows_affected=0 rows_returned=0 elapsed=36.75µs elapsed_secs=3.675e-5
+2025-12-29T17:16:31.733573712+08:00  INFO sqlx-sqlite-worker-0 ThreadId(22) sqlx::query: summary="SELECT sqlite_version()" db.statement="" rows_affected=0 rows_returned=1 elapsed=50.896µs elapsed_secs=5.0896e-5
+2025-12-29T17:19:26.772727338+08:00  INFO sqlx-sqlite-worker-0 ThreadId(22) sqlx::query: summary="SELECT \"word\".\"id\", \"word\".\"semester\", \"word\".\"unit\", …" db.statement="\n\nSELECT \"word\".\"id\", \"word\".\"semester\", \"word\".\"unit\", \"word\".\"word\", \"word\".\"phrase\", \"word\".\"sentence\", \"word\".\"meaning\" FROM \"word\" WHERE \"word\".\"semester\" = ? AND \"word\".\"unit\" = ?\n" rows_affected=0 rows_returned=26 elapsed=587.216µs elapsed_secs=0.000587216
+2025-12-29T17:19:26.773203874+08:00  INFO tokio-runtime-worker ThreadId(18) words_admin: Retrieved 26 words for semester: Grade_3_First_Semester, unit: Unit_1

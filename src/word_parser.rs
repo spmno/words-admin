@@ -1,4 +1,4 @@
-use entity::word::{ActiveModel, Column, Entity};
+use entity::word::ActiveModel;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 
@@ -16,22 +16,26 @@ impl WordParser {
 
         for line in reader.lines() {
             let line = line.map_err(|e| format!("Failed to read line: {}", e))?;
-            let json_word: serde_json::Value = serde_json::from_str(&line)
-                .map_err(|e| format!("Failed to parse JSON: {}", e))?;
+            let json_word: serde_json::Value =
+                serde_json::from_str(&line).map_err(|e| format!("Failed to parse JSON: {}", e))?;
 
             let word = ActiveModel {
                 id: sea_orm::ActiveValue::NotSet,
                 semester: sea_orm::ActiveValue::Set(
-                    json_word["semester"].as_str().unwrap_or("").to_string()
+                    json_word["semester"].as_str().unwrap_or("").to_string(),
                 ),
                 unit: sea_orm::ActiveValue::Set(
-                    json_word["unit"].as_str().unwrap_or("").to_string()
+                    json_word["unit"].as_str().unwrap_or("").to_string(),
                 ),
                 word: sea_orm::ActiveValue::Set(json_word["word"].as_str().map(|s| s.to_string())),
-                phrase: sea_orm::ActiveValue::Set(json_word["phrase"].as_str().map(|s| s.to_string())),
-                sentence: sea_orm::ActiveValue::Set(json_word["sentence"].as_str().map(|s| s.to_string())),
+                phrase: sea_orm::ActiveValue::Set(
+                    json_word["phrase"].as_str().map(|s| s.to_string()),
+                ),
+                sentence: sea_orm::ActiveValue::Set(
+                    json_word["sentence"].as_str().map(|s| s.to_string()),
+                ),
                 meaning: sea_orm::ActiveValue::Set(
-                    json_word["meaning"].as_str().unwrap_or("").to_string()
+                    json_word["meaning"].as_str().unwrap_or("").to_string(),
                 ),
             };
 
