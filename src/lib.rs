@@ -1,2 +1,3 @@
-pub mod word;
 pub mod word_parser;
+
+pub use entity::{prelude::*, word};

@@ -4,7 +4,7 @@ use axum::{
     routing::{get, post},
 };
 
-use crate::word::Word;
+use crate::word::{Column, Entity, Model};
 use crate::word_parser::WordParser;
 
 #[tokio::main]
@@ -19,7 +19,10 @@ async fn root() -> &'static str {
     "hello"
 }
 
-async fn get_words_from_book(book_name: &str) -> Json<Vec<Word>> {
+async fn get_words_from_book(book_name: &str) -> Json<Vec<Model>> {
     let word_parser = WordParser::new();
-    Json(word_parser.parse(book_name).unwrap())
+    let active_models = word_parser.parse(book_name).unwrap();
+    // Convert ActiveModel to Model would require database insertion
+    // This is a placeholder - in practice you'd query the database
+    Json(Vec::new())
 }
